@@ -157,19 +157,19 @@
             <i class="fas fa-chevron-down" style="font-size: 0.8rem; opacity: 0.3;"></i>
         </div>
 
-                   <a href="whatsapp://send?phone=51990582170&text=Hola+estoy+interesado+en+sus+servicios" class="action-btn wsp-btn">
-    <i class="fab fa-whatsapp"></i> Contactar ahora
-</a>
-            </div>
+        <a href="https://wa.link/lfsv1f" class="action-btn wsp-btn">
+            <i class="fab fa-whatsapp"></i> Contactar ahora
+        </a>
+    </div>
 
     <div id="sc-view" class="card-detail">
         <div class="badge-price">S/ 150 <small>anual</small></div>
         <h2>SmartCat</h2>
         <p>Catálogo inteligente diseñado para dispositivos móviles y cierre de ventas directo.</p>
         <ul class="qualities">
-            <li><i class="fas fa-check-circle"></i> <strong>Carga Ultra-Rápida:</strong> Optimizado para no perder clientes por tiempos de espera.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Interfaz Intuitiva:</strong> Experiencia de usuario fluida que guía hacia la compra.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Conversión Directa:</strong> Botones estratégicos que llevan el pedido directo a tu WhatsApp.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Carga Ultra-Rápida:</strong> Optimizado para no perder clientes.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Interfaz Intuitiva:</strong> Experiencia de usuario fluida.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Conversión Directa:</strong> Botones estratégicos hacia WhatsApp.</li>
         </ul>
     </div>
 
@@ -178,9 +178,9 @@
         <h2>BioCat</h2>
         <p>Centraliza tu presencia digital en un solo enlace estratégico de alto impacto.</p>
         <ul class="qualities">
-            <li><i class="fas fa-check-circle"></i> <strong>Identidad Consistente:</strong> Diseño profesional que eleva la percepción de tu marca personal.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Hub de Enlaces:</strong> Organiza redes, productos y contacto en una sola pantalla.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Optimizado para RRSS:</strong> El formato perfecto para la biografía de Instagram o TikTok.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Identidad Consistente:</strong> Diseño profesional para tu marca.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Hub de Enlaces:</strong> Organiza redes y contacto en una pantalla.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Optimizado para RRSS:</strong> Formato perfecto para Instagram/TikTok.</li>
         </ul>
     </div>
 </div>
@@ -189,10 +189,16 @@
     function toggleView(id) {
         const target = document.getElementById(id);
         const isOpen = target.classList.contains('active');
+        
+        // Cierra todos los demás antes de abrir el nuevo
         document.querySelectorAll('.card-detail').forEach(card => card.classList.remove('active'));
+        
         if (!isOpen) {
             target.classList.add('active');
-            setTimeout(() => { target.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
+            // Asegura que el usuario vea el contenido desplegado
+            setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
         }
     }
 </script>
